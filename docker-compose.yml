@@ -1,6 +1,7 @@
 services:
   ollama:
     image: ollama/ollama
+    container_name: ollama
     volumes:
       - ./ollama-models:/root/.ollama
     ports:
@@ -8,7 +9,8 @@ services:
 
   web:
     image: nginx:1.27.3-alpine
+    container_name: deepseek-nginx
     volumes:
     - ./web:/usr/share/nginx/html
     ports:
-    - "3001:80"
+    - "3000:80"

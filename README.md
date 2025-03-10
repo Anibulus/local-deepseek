@@ -12,13 +12,21 @@ git clone
 docker compose up -d
 ```
 
+2.1. (Opcional) Reemplaza el valor de `credsStore`
+
+Esto es útil si obtienes el error `error getting credentials - err: exec: "docker-credential-desktop": executable file not found in $PATH, out: `` `.
+
+```sh
+sed -i 's/"credsStore": "desktop"/"credsStore": ""/g' ~/.docker/config.json
+```
+
 3. Install the Deepseek models: (This might take a few minutes)
 
 ```sh
 docker compose exec ollama ollama pull deepseek-r1:7b
 ```
 
-4. Run the website on http://localhost:3001
+4. Run the website on http://localhost:3000
 
 # Screenshots
 
